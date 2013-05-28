@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Code:</b>
+  <%= @department.code %>
+</p>
+
+<p>
+  <b>Start date:</b>
+  <%= @department.start_date %>
+</p>
+
+<p>
+  <b>End date:</b>
+  <%= @department.end_date %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @department.name %>
+</p>
+
+<p>
+  <b>Organization hierarchy:</b>
+  <%= @department.organization_hierarchy %>
+</p>
+
+<p>
+  <b>Data input:</b>
+  <%= @department.data_input %>
+</p>
+
+
+<%= link_to 'Edit', edit_department_path(@department) %> |
+<%= link_to 'Back', departments_path %>

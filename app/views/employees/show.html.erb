@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Code:</b>
+  <%= @employee.code %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @employee.name %>
+</p>
+
+<p>
+  <b>Name kana:</b>
+  <%= @employee.name_kana %>
+</p>
+
+<p>
+  <b>Start date:</b>
+  <%= @employee.start_date %>
+</p>
+
+<p>
+  <b>Department:</b>
+  <%= @employee.department_id %>
+</p>
+
+<p>
+  <b>Occupational category:</b>
+  <%= @employee.occupational_category_id %>
+</p>
+
+<p>
+  <b>Electronic approval:</b>
+  <%= @employee.electronic_approval_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_employee_path(@employee) %> |
+<%= link_to 'Back', employees_path %>

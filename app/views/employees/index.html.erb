@@ -1,0 +1,35 @@
+<h1>Listing employees</h1>
+
+<table>
+  <tr>
+    <th>Code</th>
+    <th>Name</th>
+    <th>Name kana</th>
+    <th>Start date</th>
+    <th>Department</th>
+    <th>Occupational category</th>
+    <th>Electronic approval</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @employees.each do |employee| %>
+  <tr>
+    <td><%= employee.code %></td>
+    <td><%= employee.name %></td>
+    <td><%= employee.name_kana %></td>
+    <td><%= employee.start_date %></td>
+    <td><%= employee.department_id %></td>
+    <td><%= employee.occupational_category_id %></td>
+    <td><%= employee.electronic_approval_id %></td>
+    <td><%= link_to 'Show', employee %></td>
+    <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
+    <td><%= link_to 'Destroy', employee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Employee', new_employee_path %>

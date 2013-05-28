@@ -1,0 +1,25 @@
+<h1>Listing occupational_categories</h1>
+
+<table>
+  <tr>
+    <th>Code</th>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @occupational_categories.each do |occupational_category| %>
+  <tr>
+    <td><%= occupational_category.code %></td>
+    <td><%= occupational_category.name %></td>
+    <td><%= link_to 'Show', occupational_category %></td>
+    <td><%= link_to 'Edit', edit_occupational_category_path(occupational_category) %></td>
+    <td><%= link_to 'Destroy', occupational_category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Occupational category', new_occupational_category_path %>

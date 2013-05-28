@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Code:</b>
+  <%= @electronic_approval.code %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @electronic_approval.name %>
+</p>
+
+
+<%= link_to 'Edit', edit_electronic_approval_path(@electronic_approval) %> |
+<%= link_to 'Back', electronic_approvals_path %>

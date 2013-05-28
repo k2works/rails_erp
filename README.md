@@ -37,7 +37,20 @@
  + 単純平均法
  + 最終仕入原価法
  + 売価還元法
- 
+
+rails g scaffold employee code:string name:string name_kana:string start_date:date department_id:integer occupational_category_id:integer electronic_approval_id
+
+rails g scaffold department code:string start_date:date end_date:date name:string organization_hierarchy:integer data_input:string
+
+rails g scaffold electronic_approval code:string name:string
+
+rails g scaffold occupational_category code:string name:string
+
+rails g controller home index
+
+
+
+
 #### 取引先（顧客/仕入先）マスタの設計
 
 ### 販売システムのDB設計

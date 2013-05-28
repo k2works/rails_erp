@@ -11,6 +11,43 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 0) do
+ActiveRecord::Schema.define(:version => 20130528061301) do
+
+  create_table "departments", :force => true do |t|
+    t.string   "code"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.string   "name"
+    t.integer  "organization_hierarchy"
+    t.string   "data_input"
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
+  end
+
+  create_table "electronic_approvals", :force => true do |t|
+    t.string   "code"
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "employees", :force => true do |t|
+    t.string   "code"
+    t.string   "name"
+    t.string   "name_kana"
+    t.date     "start_date"
+    t.integer  "department_id"
+    t.integer  "occupational_category_id"
+    t.string   "electronic_approval_id"
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
+  end
+
+  create_table "occupational_categories", :force => true do |t|
+    t.string   "code"
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
 end
