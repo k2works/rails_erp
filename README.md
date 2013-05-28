@@ -40,7 +40,7 @@
 
 rails g scaffold employee code:string name:string name_kana:string start_date:date department_id:integer occupational_category_id:integer electronic_approval_id
 
-rails g scaffold department code:string start_date:date end_date:date name:string organization_hierarchy:integer data_input:string
+rails g scaffold department code:string start_date:date end_date:date name:string organization_hierarchy:integer department_id:integer data_input:string
 
 rails g scaffold electronic_approval code:string name:string
 

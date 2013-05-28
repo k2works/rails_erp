@@ -29,15 +29,15 @@
   </div>
   <div class="field">
     <%= f.label :department_id %><br />
-    <%= f.number_field :department_id %>
+    <%= f.collection_select 'department_id',Department.find(:all),:id, :name, { :include_blank => true} %>        
   </div>
   <div class="field">
     <%= f.label :occupational_category_id %><br />
-    <%= f.number_field :occupational_category_id %>
+    <%= f.collection_select 'occupational_category_id',OccupationalCategory.find(:all),:id, :name, { :include_blank => true} %>            
   </div>
   <div class="field">
     <%= f.label :electronic_approval_id %><br />
-    <%= f.text_field :electronic_approval_id %>
+    <%= f.collection_select 'electronic_approval_id',ElectronicApproval.find(:all),:id, :name, { :include_blank => true} %>            
   </div>
   <div class="actions">
     <%= f.submit %>

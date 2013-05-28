@@ -20,9 +20,9 @@
     <td><%= employee.name %></td>
     <td><%= employee.name_kana %></td>
     <td><%= employee.start_date %></td>
-    <td><%= employee.department_id %></td>
-    <td><%= employee.occupational_category_id %></td>
-    <td><%= employee.electronic_approval_id %></td>
+    <td><%= employee.department.name %></td>
+    <td><%= employee.occupational_category.name %></td>
+    <td><%= employee.electronic_approval.name %></td>
     <td><%= link_to 'Show', employee %></td>
     <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
     <td><%= link_to 'Destroy', employee, method: :delete, data: { confirm: 'Are you sure?' } %></td>

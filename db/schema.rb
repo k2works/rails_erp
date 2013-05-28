@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130528061301) do
+ActiveRecord::Schema.define(:version => 20130528063038) do
 
   create_table "departments", :force => true do |t|
     t.string   "code"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(:version => 20130528061301) do
     t.string   "data_input"
     t.datetime "created_at",             :null => false
     t.datetime "updated_at",             :null => false
+    t.string   "higt_department_code"
   end
 
   create_table "electronic_approvals", :force => true do |t|
