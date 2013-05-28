@@ -38,18 +38,21 @@
  + 最終仕入原価法
  + 売価還元法
 
-rails g scaffold employee code:string name:string name_kana:string start_date:date department_id:integer occupational_category_id:integer electronic_approval_id
+`rails g scaffold employee code:string name:string name_kana:string start_date:date department_id:integer occupational_category_id:integer electronic_approval_id`
 
-rails g scaffold department code:string start_date:date end_date:date name:string organization_hierarchy:integer department_id:integer data_input:string
+`rails g scaffold department code:string start_date:date end_date:date name:string organization_hierarchy:integer hight_department_code:string data_input:string`
 
-rails g scaffold electronic_approval code:string name:string
+`rails g scaffold electronic_approval code:string name:string`
 
-rails g scaffold occupational_category code:string name:string
+`rails g scaffold occupational_category code:string name:string`
 
-rails g controller home index
+`rails g controller home index`
 
+`rails g scaffold product code:string name_long:string name_short:string name_kana:string model_number:string unit_sales_price:decimal purchase_price:decimal sales_unit_price:decimal tax_division:string product_grouping_id:integer`
 
+`rails g scaffold sales_unit_price_by_customer product_id:integer customer_id:integer sales_unit_price:decimal`
 
+`rails g scaffold product_grouping code:string name:string class_name:string product_grouping_id:integer`
 
 #### 取引先（顧客/仕入先）マスタの設計
 

@@ -1,0 +1,30 @@
+<%= form_for(@sales_unit_price_by_customer) do |f| %>
+  <% if @sales_unit_price_by_customer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sales_unit_price_by_customer.errors.count, "error") %> prohibited this sales_unit_price_by_customer from being saved:</h2>
+
+      <ul>
+      <% @sales_unit_price_by_customer.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :product_id %><br />
+    <%= f.number_field :product_id %><br />
+    <%= f.collection_select 'product_id',Product.find(:all),:id, :name_short, { :include_blank => true} %> 
+  </div>
+  <div class="field">
+    <%= f.label :customer_id %><br />
+    <%= f.number_field :customer_id %>
+  </div>
+  <div class="field">
+    <%= f.label :sales_unit_price %><br />
+    <%= f.text_field :sales_unit_price %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

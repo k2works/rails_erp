@@ -33,7 +33,7 @@
   </div>
   <div class="field">
     <%= f.label :higt_department_code %><br />
-    <%= f.number_field :higt_department_code %>
+    <%= f.collection_select 'higt_department_code',Department.find(:all),:id, :name, { :include_blank => true} %>     
   </div>  
   <div class="field">
     <%= f.label :data_input %><br />

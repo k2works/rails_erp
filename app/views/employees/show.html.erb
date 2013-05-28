@@ -22,17 +22,17 @@
 
 <p>
   <b>Department:</b>
-  <%= @employee.department_id %>
+  <%= Department.find(@employee.department_id).name %>
 </p>
 
 <p>
   <b>Occupational category:</b>
-  <%= @employee.occupational_category_id %>
+  <%= OccupationalCategory.find(@employee.occupational_category_id).name %>
 </p>
 
 <p>
   <b>Electronic approval:</b>
-  <%= @employee.electronic_approval_id %>
+  <%= ElectronicApproval.find(@employee.electronic_approval_id).name %>
 </p>
 
 

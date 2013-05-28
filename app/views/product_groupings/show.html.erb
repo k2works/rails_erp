@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Code:</b>
+  <%= @product_grouping.code %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @product_grouping.name %>
+</p>
+
+<p>
+  <b>Class name:</b>
+  <%= @product_grouping.class_name %>
+</p>
+
+<p>
+  <b>Product grouping:</b>
+  <%= @product_grouping.product_grouping_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_product_grouping_path(@product_grouping) %> |
+<%= link_to 'Back', product_groupings_path %>

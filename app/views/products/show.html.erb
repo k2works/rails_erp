@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Code:</b>
+  <%= @product.code %>
+</p>
+
+<p>
+  <b>Name long:</b>
+  <%= @product.name_long %>
+</p>
+
+<p>
+  <b>Name short:</b>
+  <%= @product.name_short %>
+</p>
+
+<p>
+  <b>Name kana:</b>
+  <%= @product.name_kana %>
+</p>
+
+<p>
+  <b>Model number:</b>
+  <%= @product.model_number %>
+</p>
+
+<p>
+  <b>Unit sales price:</b>
+  <%= @product.unit_sales_price %>
+</p>
+
+<p>
+  <b>Purchase price:</b>
+  <%= @product.purchase_price %>
+</p>
+
+<p>
+  <b>Sales unit price:</b>
+  <%= @product.sales_unit_price %>
+</p>
+
+<p>
+  <b>Tax division:</b>
+  <%= @product.tax_division %>
+</p>
+
+<p>
+  <b>Product grouping:</b>
+  <%= @product.product_grouping_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>

@@ -7,7 +7,7 @@
     <th>End date</th>
     <th>Name</th>
     <th>Organization hierarchy</th>
-    <td>Higt Department Code </td>        
+    <th>Higt Department Code </th>
     <th>Data input</th>
     <th></th>
     <th></th>
@@ -21,7 +21,7 @@
     <td><%= department.end_date %></td>
     <td><%= department.name %></td>
     <td><%= department.organization_hierarchy %></td>
-    <td><%= department.higt_department_code %></td>    
+    <td><%= Department.find(department.higt_department_code).name %></td>    
     <td><%= department.data_input %></td>
     <td><%= link_to 'Show', department %></td>
     <td><%= link_to 'Edit', edit_department_path(department) %></td>

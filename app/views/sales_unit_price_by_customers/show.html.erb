@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Product:</b>
+  <%= @sales_unit_price_by_customer.product_id %>
+</p>
+
+<p>
+  <b>Customer:</b>
+  <%= @sales_unit_price_by_customer.customer_id %>
+</p>
+
+<p>
+  <b>Sales unit price:</b>
+  <%= @sales_unit_price_by_customer.sales_unit_price %>
+</p>
+
+
+<%= link_to 'Edit', edit_sales_unit_price_by_customer_path(@sales_unit_price_by_customer) %> |
+<%= link_to 'Back', sales_unit_price_by_customers_path %>

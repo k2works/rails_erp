@@ -1,0 +1,27 @@
+<h1>Listing sales_unit_price_by_customers</h1>
+
+<table>
+  <tr>
+    <th>Product</th>
+    <th>Customer</th>
+    <th>Sales unit price</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @sales_unit_price_by_customers.each do |sales_unit_price_by_customer| %>
+  <tr>
+    <td><%= sales_unit_price_by_customer.product.name_short %></td>
+    <td><%= sales_unit_price_by_customer.customer_id %></td>
+    <td><%= sales_unit_price_by_customer.sales_unit_price %></td>
+    <td><%= link_to 'Show', sales_unit_price_by_customer %></td>
+    <td><%= link_to 'Edit', edit_sales_unit_price_by_customer_path(sales_unit_price_by_customer) %></td>
+    <td><%= link_to 'Destroy', sales_unit_price_by_customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Sales unit price by customer', new_sales_unit_price_by_customer_path %>

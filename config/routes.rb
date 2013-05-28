@@ -1,4 +1,13 @@
 RailsErp::Application.routes.draw do
+  resources :sales_unit_price_by_customers
+
+
+  resources :product_groupings
+
+
+  resources :products
+
+
   root to: 'home#index'
   
   get "home/index"

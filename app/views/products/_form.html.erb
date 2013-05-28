@@ -1,0 +1,57 @@
+<%= form_for(@product) do |f| %>
+  <% if @product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+      <% @product.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :code %><br />
+    <%= f.text_field :code %>
+  </div>
+  <div class="field">
+    <%= f.label :name_long %><br />
+    <%= f.text_field :name_long %>
+  </div>
+  <div class="field">
+    <%= f.label :name_short %><br />
+    <%= f.text_field :name_short %>
+  </div>
+  <div class="field">
+    <%= f.label :name_kana %><br />
+    <%= f.text_field :name_kana %>
+  </div>
+  <div class="field">
+    <%= f.label :model_number %><br />
+    <%= f.text_field :model_number %>
+  </div>
+  <div class="field">
+    <%= f.label :unit_sales_price %><br />
+    <%= f.text_field :unit_sales_price %>
+  </div>
+  <div class="field">
+    <%= f.label :purchase_price %><br />
+    <%= f.text_field :purchase_price %>
+  </div>
+  <div class="field">
+    <%= f.label :sales_unit_price %><br />
+    <%= f.text_field :sales_unit_price %>
+  </div>
+  <div class="field">
+    <%= f.label :tax_division %><br />
+    <%= f.text_field :tax_division %>
+  </div>
+  <div class="field">
+    <%= f.label :product_grouping_id %><br />
+    <%= f.collection_select 'product_grouping_id',ProductGrouping.find(:all),:id, :name, { :include_blank => true} %>                
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

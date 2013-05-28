@@ -1,0 +1,33 @@
+<%= form_for(@product_grouping) do |f| %>
+  <% if @product_grouping.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@product_grouping.errors.count, "error") %> prohibited this product_grouping from being saved:</h2>
+
+      <ul>
+      <% @product_grouping.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :code %><br />
+    <%= f.text_field :code %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :class_name %><br />
+    <%= f.text_field :class_name %>
+  </div>
+  <div class="field">
+    <%= f.label :product_grouping_id %><br />
+    <%= f.collection_select 'product_grouping_id',ProductGrouping.find(:all),:id, :name, { :include_blank => true} %>                
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
