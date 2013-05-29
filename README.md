@@ -52,9 +52,57 @@
 
 `rails g scaffold sales_unit_price_by_customer product_id:integer customer_id:integer sales_unit_price:decimal`
 
-`rails g scaffold product_grouping code:string name:string class_name:string product_grouping_id:integer`
+`rails g scaffold product_grouping code:string name:string class_name:string product_grouping_id:integer connection_id:integer`
 
 #### 取引先（顧客/仕入先）マスタの設計
+
++ 取引先グループマスタ
+
+`rails g scaffold connection_group code:string name:string`
+
++ 取引先マスタ
+`
+rails g scaffold connection code:string name:string name_kana:string supplier_division:string customer_division:string zip:string prefectures:string address_1:string address_2:string ban_division:string miscellaneous_division:string credit_limit:decimal credit_limit_increas_frame:decimal connection_group_id:integer
+`
++ 仕入先マスタ
+`
+rails g scaffold supplier code:string branch_number:integer name:string name_kana:string person_responsible_name:string department_name:string zip:string prefectures:string address_1:string address_2:string phone_number:string fax_number:string mail:string closing_day:string payment_month:string payment_day:string payment_division:string connection_id:integer
+`
+
++ 顧客マスタ
+
+`
+rails g scaffold customer code:string branch_number:integer division:string billing_code:string billing_branch_number:integer collect_code:string collect_branch_number:integer name:string name_kana:string company_person_responsible_code:string person_responsible_name:string department_name:string zip:string prefectures:string address_1:string address_2:string phone_number:string fax_number:string mail:string collect_division:string closing_day_1:string payment_month_1:string payment_day_1:string payment_method_1:string closing_day_2:string payment_month_2:string payment_day_2:string payment_method_2:string connection_id
+`
+
++ 出荷先マスタ
+`
+rails g scaffold shipment number:integer name:string zip:string address_1:string address_2:string customer_id:integer
+`
+
++ 取引先分類所属マスタ
+`
+rails g scaffold connection_category_member connection_id:integer connection_category_id:integer
+`
+
++ 取引先分類マスタ
+`rails g scaffold connection_category code:string name:string connection_category_class_id:integer`
+
++ 取引先分類種別マスタ
+
+`rails g scaffold connection_category_class code:string name:string`
+
++ 顧客マスタ
+ - 得意先
+ - 請求先
+ - 出荷先
+ - 都度請求と締請求
+ - 複数締日
+ - 支払方法（現金と手形）
+
++ 取引先グループマスタ
+
++ 取引先分類マスタ
 
 ### 販売システムのDB設計
 

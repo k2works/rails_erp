@@ -13,12 +13,11 @@
 
   <div class="field">
     <%= f.label :product_id %><br />
-    <%= f.number_field :product_id %><br />
     <%= f.collection_select 'product_id',Product.find(:all),:id, :name_short, { :include_blank => true} %> 
   </div>
   <div class="field">
     <%= f.label :customer_id %><br />
-    <%= f.number_field :customer_id %>
+    <%= f.collection_select :customer_id, Customer.all, :id, :name, { include_blank: true } %>
   </div>
   <div class="field">
     <%= f.label :sales_unit_price %><br />

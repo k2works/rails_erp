@@ -13,7 +13,7 @@
 <% @sales_unit_price_by_customers.each do |sales_unit_price_by_customer| %>
   <tr>
     <td><%= sales_unit_price_by_customer.product.name_short %></td>
-    <td><%= sales_unit_price_by_customer.customer_id %></td>
+    <td><%= sales_unit_price_by_customer.customer.name %></td>
     <td><%= sales_unit_price_by_customer.sales_unit_price %></td>
     <td><%= link_to 'Show', sales_unit_price_by_customer %></td>
     <td><%= link_to 'Edit', edit_sales_unit_price_by_customer_path(sales_unit_price_by_customer) %></td>

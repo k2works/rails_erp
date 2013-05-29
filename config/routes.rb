@@ -1,4 +1,28 @@
 RailsErp::Application.routes.draw do
+  resources :connection_category_classes
+
+
+  resources :connection_categories
+
+
+  resources :connection_category_members
+
+
+  resources :shipments
+
+
+  resources :customers
+
+
+  resources :suppliers
+
+
+  resources :connections
+
+
+  resources :connection_groups
+
+
   resources :sales_unit_price_by_customers
 
 
