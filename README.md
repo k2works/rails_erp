@@ -38,21 +38,35 @@
  + 最終仕入原価法
  + 売価還元法
 
-`rails g scaffold employee code:string name:string name_kana:string start_date:date department_id:integer occupational_category_id:integer electronic_approval_id`
-
-`rails g scaffold department code:string start_date:date end_date:date name:string organization_hierarchy:integer hight_department_code:string data_input:string`
-
-`rails g scaffold electronic_approval code:string name:string`
-
-`rails g scaffold occupational_category code:string name:string`
-
++ ホーム画面
 `rails g controller home index`
 
++ 社員マスタ
+`
+rails g scaffold employee code:string name:string name_kana:string start_date:date department_id:integer occupational_category_id:integer electronic_approval_id`
+
++ 部門マスタ
+`
+rails g scaffold department code:string start_date:date end_date:date name:string organization_hierarchy:integer hight_department_code:string data_input:string
+`
+
++ 電子承認マスタ
+`
+rails g scaffold electronic_approval code:string name:string
+`
+
++ 職種区分
+`
+rails g scaffold occupational_category code:string name:string
+`
++ 商品分類マスタ
+`
+rails g scaffold product_grouping code:string name:string class_name:string product_grouping_id:integer
+`
++ 商品マスタ
 `rails g scaffold product code:string name_long:string name_short:string name_kana:string model_number:string unit_sales_price:decimal purchase_price:decimal sales_unit_price:decimal tax_division:string product_grouping_id:integer`
-
++ 顧客別販売単価
 `rails g scaffold sales_unit_price_by_customer product_id:integer customer_id:integer sales_unit_price:decimal`
-
-`rails g scaffold product_grouping code:string name:string class_name:string product_grouping_id:integer connection_id:integer`
 
 #### 取引先（顧客/仕入先）マスタの設計
 
@@ -70,7 +84,6 @@ rails g scaffold supplier code:string branch_number:integer name:string name_kan
 `
 
 + 顧客マスタ
-
 `
 rails g scaffold customer code:string branch_number:integer division:string billing_code:string billing_branch_number:integer collect_code:string collect_branch_number:integer name:string name_kana:string company_person_responsible_code:string person_responsible_name:string department_name:string zip:string prefectures:string address_1:string address_2:string phone_number:string fax_number:string mail:string collect_division:string closing_day_1:string payment_month_1:string payment_day_1:string payment_method_1:string closing_day_2:string payment_month_2:string payment_day_2:string payment_method_2:string connection_id
 `
@@ -86,11 +99,14 @@ rails g scaffold connection_category_member connection_id:integer connection_cat
 `
 
 + 取引先分類マスタ
-`rails g scaffold connection_category code:string name:string connection_category_class_id:integer`
+`
+rails g scaffold connection_category code:string name:string connection_category_class_id:integer
+`
 
 + 取引先分類種別マスタ
-
-`rails g scaffold connection_category_class code:string name:string`
+`
+rails g scaffold connection_category_class code:string name:string
+`
 
 + 顧客マスタ
  - 得意先
