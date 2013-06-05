@@ -1,0 +1,75 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Code:</b>
+  <%= @connection.code %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @connection.name %>
+</p>
+
+<p>
+  <b>Name kana:</b>
+  <%= @connection.name_kana %>
+</p>
+
+<p>
+  <b>SupplierDivision:</b>
+  <%= @connection.supplier_division %>
+</p>
+
+<p>
+  <b>CustomerDivision:</b>
+  <%= @connection.customer_division %>
+</p>
+
+<p>
+  <b>Zip:</b>
+  <%= @connection.zip %>
+</p>
+
+<p>
+  <b>Prefectures:</b>
+  <%= @connection.prefectures %>
+</p>
+
+<p>
+  <b>Address 1:</b>
+  <%= @connection.address_1 %>
+</p>
+
+<p>
+  <b>Address 2:</b>
+  <%= @connection.address_2 %>
+</p>
+
+<p>
+  <b>Ban division:</b>
+  <%= @connection.ban_division %>
+</p>
+
+<p>
+  <b>Miscellaneous division:</b>
+  <%= @connection.miscellaneous_division %>
+</p>
+
+<p>
+  <b>Credit limit:</b>
+  <%= @connection.credit_limit %>
+</p>
+
+<p>
+  <b>Credit limit increas frame:</b>
+  <%= @connection.credit_limit_increas_frame %>
+</p>
+
+<p>
+  <b>Connection group:</b>
+  <%= @connection.connection_group.name %>
+</p>
+
+
+<%= link_to 'Edit', edit_connection_path(@connection) %> |
+<%= link_to 'Back', connections_path %>

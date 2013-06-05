@@ -1,0 +1,57 @@
+<h1>Listing suppliers</h1>
+
+<table>
+  <tr>
+    <th>Code</th>
+    <th>Branch number</th>
+    <th>Name</th>
+    <th>Name kana</th>
+    <th>Person responsible name</th>
+    <th>Department name</th>
+    <th>Zip</th>
+    <th>Prefectures</th>
+    <th>Address 1</th>
+    <th>Address 2</th>
+    <th>Phone number</th>
+    <th>Fax number</th>
+    <th>Mail</th>
+    <th>Closing day</th>
+    <th>Payment month</th>
+    <th>Payment day</th>
+    <th>Payment division</th>
+    <th>Connection</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @suppliers.each do |supplier| %>
+  <tr>
+    <td><%= supplier.code %></td>
+    <td><%= supplier.branch_number %></td>
+    <td><%= supplier.name %></td>
+    <td><%= supplier.name_kana %></td>
+    <td><%= supplier.person_responsible_name %></td>
+    <td><%= supplier.department_name %></td>
+    <td><%= supplier.zip %></td>
+    <td><%= supplier.prefectures %></td>
+    <td><%= supplier.address_1 %></td>
+    <td><%= supplier.address_2 %></td>
+    <td><%= supplier.phone_number %></td>
+    <td><%= supplier.fax_number %></td>
+    <td><%= supplier.mail %></td>
+    <td><%= supplier.closing_day %></td>
+    <td><%= supplier.payment_month %></td>
+    <td><%= supplier.payment_day %></td>
+    <td><%= supplier.payment_division %></td>
+    <td><%= supplier.connection.name %></td>
+    <td><%= link_to 'Show', supplier %></td>
+    <td><%= link_to 'Edit', edit_supplier_path(supplier) %></td>
+    <td><%= link_to 'Destroy', supplier, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Supplier', new_supplier_path %>

@@ -1,0 +1,150 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Code:</b>
+  <%= @customer.code %>
+</p>
+
+<p>
+  <b>Branch number:</b>
+  <%= @customer.branch_number %>
+</p>
+
+<p>
+  <b>Division:</b>
+  <%= @customer.division %>
+</p>
+
+<p>
+  <b>Billing code:</b>
+  <%= @customer.billing_code %>
+</p>
+
+<p>
+  <b>Billing branch number:</b>
+  <%= @customer.billing_branch_number %>
+</p>
+
+<p>
+  <b>Collect code:</b>
+  <%= @customer.collect_code %>
+</p>
+
+<p>
+  <b>Collect branch number:</b>
+  <%= @customer.collect_branch_number %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @customer.name %>
+</p>
+
+<p>
+  <b>Name kana:</b>
+  <%= @customer.name_kana %>
+</p>
+
+<p>
+  <b>Company person responsible code:</b>
+  <%= @customer.company_person_responsible_code %>
+</p>
+
+<p>
+  <b>Person responsible name:</b>
+  <%= @customer.person_responsible_name %>
+</p>
+
+<p>
+  <b>Department name:</b>
+  <%= @customer.department_name %>
+</p>
+
+<p>
+  <b>Zip:</b>
+  <%= @customer.zip %>
+</p>
+
+<p>
+  <b>Prefectures:</b>
+  <%= @customer.prefectures %>
+</p>
+
+<p>
+  <b>Address 1:</b>
+  <%= @customer.address_1 %>
+</p>
+
+<p>
+  <b>Address 2:</b>
+  <%= @customer.address_2 %>
+</p>
+
+<p>
+  <b>Phone number:</b>
+  <%= @customer.phone_number %>
+</p>
+
+<p>
+  <b>Fax number:</b>
+  <%= @customer.fax_number %>
+</p>
+
+<p>
+  <b>Mail:</b>
+  <%= @customer.mail %>
+</p>
+
+<p>
+  <b>Collect division:</b>
+  <%= @customer.collect_division %>
+</p>
+
+<p>
+  <b>Closing day 1:</b>
+  <%= @customer.closing_day_1 %>
+</p>
+
+<p>
+  <b>Payment month 1:</b>
+  <%= @customer.payment_month_1 %>
+</p>
+
+<p>
+  <b>Payment day 1:</b>
+  <%= @customer.payment_day_1 %>
+</p>
+
+<p>
+  <b>Payment method 1:</b>
+  <%= @customer.payment_method_1 %>
+</p>
+
+<p>
+  <b>Closing day 2:</b>
+  <%= @customer.closing_day_2 %>
+</p>
+
+<p>
+  <b>Payment month 2:</b>
+  <%= @customer.payment_month_2 %>
+</p>
+
+<p>
+  <b>Payment day 2:</b>
+  <%= @customer.payment_day_2 %>
+</p>
+
+<p>
+  <b>Payment method 2:</b>
+  <%= @customer.payment_method_2 %>
+</p>
+
+<p>
+  <b>Connection:</b>
+  <%= @customer.connection.name %>
+</p>
+
+
+<%= link_to 'Edit', edit_customer_path(@customer) %> |
+<%= link_to 'Back', customers_path %>

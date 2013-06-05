@@ -1,0 +1,49 @@
+<h1>Listing connections</h1>
+
+<table>
+  <tr>
+    <th>Code</th>
+    <th>Name</th>
+    <th>Name kana</th>
+    <th>Supplier_Division</th>
+    <th>Customer_Division</th>    
+    <th>Zip</th>
+    <th>Prefectures</th>
+    <th>Address 1</th>
+    <th>Address 2</th>
+    <th>Ban division</th>
+    <th>Miscellaneous division</th>
+    <th>Credit limit</th>
+    <th>Credit limit increas frame</th>
+    <th>Connection group</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @connections.each do |connection| %>
+  <tr>
+    <td><%= connection.code %></td>
+    <td><%= connection.name %></td>
+    <td><%= connection.name_kana %></td>
+    <td><%= connection.supplier_division %></td>
+    <td><%= connection.customer_division %></td>    
+    <td><%= connection.zip %></td>
+    <td><%= connection.prefectures %></td>
+    <td><%= connection.address_1 %></td>
+    <td><%= connection.address_2 %></td>
+    <td><%= connection.ban_division %></td>
+    <td><%= connection.miscellaneous_division %></td>
+    <td><%= connection.credit_limit %></td>
+    <td><%= connection.credit_limit_increas_frame %></td>
+    <td><%= connection.connection_group.name %></td>
+    <td><%= link_to 'Show', connection %></td>
+    <td><%= link_to 'Edit', edit_connection_path(connection) %></td>
+    <td><%= link_to 'Destroy', connection, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Connection', new_connection_path %>

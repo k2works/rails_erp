@@ -1,0 +1,79 @@
+<h1>Listing customers</h1>
+
+<table>
+  <tr>
+    <th>Code</th>
+    <th>Branch number</th>
+    <th>Division</th>
+    <th>Billing code</th>
+    <th>Billing branch number</th>
+    <th>Collect code</th>
+    <th>Collect branch number</th>
+    <th>Name</th>
+    <th>Name kana</th>
+    <th>Company person responsible code</th>
+    <th>Person responsible name</th>
+    <th>Department name</th>
+    <th>Zip</th>
+    <th>Prefectures</th>
+    <th>Address 1</th>
+    <th>Address 2</th>
+    <th>Phone number</th>
+    <th>Fax number</th>
+    <th>Mail</th>
+    <th>Collect division</th>
+    <th>Closing day 1</th>
+    <th>Payment month 1</th>
+    <th>Payment day 1</th>
+    <th>Payment method 1</th>
+    <th>Closing day 2</th>
+    <th>Payment month 2</th>
+    <th>Payment day 2</th>
+    <th>Payment method 2</th>
+    <th>Connection</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @customers.each do |customer| %>
+  <tr>
+    <td><%= customer.code %></td>
+    <td><%= customer.branch_number %></td>
+    <td><%= customer.division %></td>
+    <td><%= customer.billing_code %></td>
+    <td><%= customer.billing_branch_number %></td>
+    <td><%= customer.collect_code %></td>
+    <td><%= customer.collect_branch_number %></td>
+    <td><%= customer.name %></td>
+    <td><%= customer.name_kana %></td>
+    <td><%= customer.company_person_responsible_code %></td>
+    <td><%= customer.person_responsible_name %></td>
+    <td><%= customer.department_name %></td>
+    <td><%= customer.zip %></td>
+    <td><%= customer.prefectures %></td>
+    <td><%= customer.address_1 %></td>
+    <td><%= customer.address_2 %></td>
+    <td><%= customer.phone_number %></td>
+    <td><%= customer.fax_number %></td>
+    <td><%= customer.mail %></td>
+    <td><%= customer.collect_division %></td>
+    <td><%= customer.closing_day_1 %></td>
+    <td><%= customer.payment_month_1 %></td>
+    <td><%= customer.payment_day_1 %></td>
+    <td><%= customer.payment_method_1 %></td>
+    <td><%= customer.closing_day_2 %></td>
+    <td><%= customer.payment_month_2 %></td>
+    <td><%= customer.payment_day_2 %></td>
+    <td><%= customer.payment_method_2 %></td>
+    <td><%= customer.connection.name %></td>
+    <td><%= link_to 'Show', customer %></td>
+    <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
+    <td><%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Customer', new_customer_path %>

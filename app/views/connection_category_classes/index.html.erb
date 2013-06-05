@@ -1,0 +1,25 @@
+<h1>Listing connection_category_classes</h1>
+
+<table>
+  <tr>
+    <th>Code</th>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @connection_category_classes.each do |connection_category_class| %>
+  <tr>
+    <td><%= connection_category_class.code %></td>
+    <td><%= connection_category_class.name %></td>
+    <td><%= link_to 'Show', connection_category_class %></td>
+    <td><%= link_to 'Edit', edit_connection_category_class_path(connection_category_class) %></td>
+    <td><%= link_to 'Destroy', connection_category_class, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Connection category class', new_connection_category_class_path %>

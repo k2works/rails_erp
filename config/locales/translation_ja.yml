@@ -1,0 +1,172 @@
+ja:
+  activerecord:
+    models:
+      connection: connection  #g
+      connection_category: connection_category  #g
+      connection_category_class: connection_category_class  #g
+      connection_category_member: connection_category_member  #g
+      connection_group: connection_group  #g
+      customer: customer  #g
+      department: department  #g
+      electronic_approval: electronic_approval  #g
+      employee: employee  #g
+      occupational_category: occupational_category  #g
+      product: product  #g
+      product_grouping: product_grouping  #g
+      sales_unit_price_by_customer: sales_unit_price_by_customer  #g
+      shipment: shipment  #g
+      supplier: supplier  #g
+
+    attributes:
+      connection:
+        address_1: address_1  #g
+        address_2: address_2  #g
+        ban_division: ban_division  #g
+        code: code  #g
+        connection_category_member: connection_category_member  #g
+        connection_group: :activerecord.models.connection_group  #g
+        credit_limit: credit_limit  #g
+        credit_limit_increas_frame: credit_limit_increas_frame  #g
+        customer: customer  #g
+        customer_division: customer_division  #g
+        miscellaneous_division: miscellaneous_division  #g
+        name: name  #g
+        name_kana: name_kana  #g
+        prefectures: prefectures  #g
+        supplier: supplier  #g
+        supplier_division: supplier_division  #g
+        zip: zip  #g
+
+      connection_category:
+        code: code  #g
+        connection_category_class: :activerecord.models.connection_category_class  #g
+        connection_category_member: connection_category_member  #g
+        name: name  #g
+
+      connection_category_class:
+        code: code  #g
+        connection_category: connection_category  #g
+        name: name  #g
+
+      connection_category_member:
+        connection: :activerecord.models.connection  #g
+        connection_category: :activerecord.models.connection_category  #g
+
+      connection_group:
+        code: code  #g
+        connection: connection  #g
+        name: name  #g
+
+      customer:
+        address_1: address_1  #g
+        address_2: address_2  #g
+        billing_branch_number: billing_branch_number  #g
+        billing_code: billing_code  #g
+        branch_number: branch_number  #g
+        closing_day_1: closing_day_1  #g
+        closing_day_2: closing_day_2  #g
+        code: code  #g
+        collect_branch_number: collect_branch_number  #g
+        collect_code: collect_code  #g
+        collect_division: collect_division  #g
+        company_person_responsible_code: company_person_responsible_code  #g
+        connection: :activerecord.models.connection  #g
+        department_name: department_name  #g
+        division: division  #g
+        fax_number: fax_number  #g
+        mail: mail  #g
+        name: name  #g
+        name_kana: name_kana  #g
+        payment_day_1: payment_day_1  #g
+        payment_day_2: payment_day_2  #g
+        payment_method_1: payment_method_1  #g
+        payment_method_2: payment_method_2  #g
+        payment_month_1: payment_month_1  #g
+        payment_month_2: payment_month_2  #g
+        person_responsible_name: person_responsible_name  #g
+        phone_number: phone_number  #g
+        prefectures: prefectures  #g
+        sales_unit_price_by_customer: sales_unit_price_by_customer  #g
+        shipment: shipment  #g
+        zip: zip  #g
+
+      department:
+        code: code  #g
+        data_input: data_input  #g
+        employee: employee  #g
+        end_date: end_date  #g
+        higt_department_code: higt_department_code  #g
+        name: name  #g
+        organization_hierarchy: organization_hierarchy  #g
+        start_date: start_date  #g
+
+      electronic_approval:
+        code: code  #g
+        employee: employee  #g
+        name: name  #g
+
+      employee:
+        code: code  #g
+        department: :activerecord.models.department  #g
+        electronic_approval: :activerecord.models.electronic_approval  #g
+        name: name  #g
+        name_kana: name_kana  #g
+        occupational_category: :activerecord.models.occupational_category  #g
+        start_date: start_date  #g
+
+      occupational_category:
+        code: code  #g
+        employee: employee  #g
+        name: name  #g
+
+      product:
+        code: code  #g
+        model_number: model_number  #g
+        name_kana: name_kana  #g
+        name_long: name_long  #g
+        name_short: name_short  #g
+        product_grouping: :activerecord.models.product_grouping  #g
+        purchase_price: purchase_price  #g
+        sales_unit_price: sales_unit_price  #g
+        sales_unit_price_by_customer: sales_unit_price_by_customer  #g
+        tax_division: tax_division  #g
+        unit_sales_price: unit_sales_price  #g
+
+      product_grouping:
+        class_name: class_name  #g
+        code: code  #g
+        name: name  #g
+        product_grouping: :activerecord.models.product_grouping  #g
+
+      sales_unit_price_by_customer:
+        customer: :activerecord.models.customer  #g
+        product: :activerecord.models.product  #g
+        sales_unit_price: sales_unit_price  #g
+
+      shipment:
+        address_1: address_1  #g
+        address_2: address_2  #g
+        customer: :activerecord.models.customer  #g
+        name: name  #g
+        number: number  #g
+        zip: zip  #g
+
+      supplier:
+        address_1: address_1  #g
+        address_2: address_2  #g
+        branch_number: branch_number  #g
+        closing_day: closing_day  #g
+        code: code  #g
+        connection: :activerecord.models.connection  #g
+        department_name: department_name  #g
+        fax_number: fax_number  #g
+        mail: mail  #g
+        name: name  #g
+        name_kana: name_kana  #g
+        payment_day: payment_day  #g
+        payment_division: payment_division  #g
+        payment_month: payment_month  #g
+        person_responsible_name: person_responsible_name  #g
+        phone_number: phone_number  #g
+        prefectures: prefectures  #g
+        zip: zip  #g

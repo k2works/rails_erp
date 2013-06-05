@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Code:</b>
+  <%= @connection_category_class.code %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @connection_category_class.name %>
+</p>
+
+
+<%= link_to 'Edit', edit_connection_category_class_path(@connection_category_class) %> |
+<%= link_to 'Back', connection_category_classes_path %>

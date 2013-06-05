@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Connection:</b>
+  <%= @connection_category_member.connection.name %>
+</p>
+
+<p>
+  <b>Connection category:</b>
+  <%= @connection_category_member.connection_category.name %>
+</p>
+
+
+<%= link_to 'Edit', edit_connection_category_member_path(@connection_category_member) %> |
+<%= link_to 'Back', connection_category_members_path %>

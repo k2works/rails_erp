@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130529065715) do
+ActiveRecord::Schema.define(:version => 20130605020503) do
 
   create_table "connection_categories", :force => true do |t|
     t.string   "code"
@@ -133,6 +133,40 @@ ActiveRecord::Schema.define(:version => 20130529065715) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "order_details", :force => true do |t|
+    t.integer  "order_line_number"
+    t.integer  "product_id"
+    t.string   "product_name"
+    t.decimal  "product_sales_unit_price"
+    t.decimal  "order_amount"
+    t.decimal  "consumption_tax_rate"
+    t.decimal  "reserve_amount"
+    t.decimal  "shipping_instructions_amount"
+    t.decimal  "shipped_amount"
+    t.integer  "finish_flag"
+    t.decimal  "discount"
+    t.date     "due_date"
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
+  end
+
+  create_table "orders", :force => true do |t|
+    t.integer  "order_number"
+    t.date     "order_date"
+    t.integer  "department_id"
+    t.integer  "customer_id"
+    t.integer  "employee_id"
+    t.date     "desired_delivery_time"
+    t.string   "customer_order_number"
+    t.string   "warehouse_code"
+    t.decimal  "contract_amount_sum"
+    t.decimal  "consumption_tax_amount"
+    t.text     "notes"
+    t.integer  "order_details_id"
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
+  end
+
   create_table "product_groupings", :force => true do |t|
     t.string   "code"
     t.string   "name"
@@ -153,8 +187,10 @@ ActiveRecord::Schema.define(:version => 20130529065715) do
     t.decimal  "sales_unit_price"
     t.string   "tax_division"
     t.integer  "product_grouping_id"
-    t.datetime "created_at",          :null => false
-    t.datetime "updated_at",          :null => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
+    t.string   "inventory_control_division"
+    t.string   "inventory_reservation_division"
   end
 
   create_table "sales_unit_price_by_customers", :force => true do |t|

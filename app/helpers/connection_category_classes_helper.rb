@@ -1,0 +1,2 @@
+module ConnectionCategoryClassesHelper
+end

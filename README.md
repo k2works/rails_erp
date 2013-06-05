@@ -64,7 +64,9 @@ rails g scaffold occupational_category code:string name:string
 rails g scaffold product_grouping code:string name:string class_name:string product_grouping_id:integer
 `
 + 商品マスタ
-`rails g scaffold product code:string name_long:string name_short:string name_kana:string model_number:string unit_sales_price:decimal purchase_price:decimal sales_unit_price:decimal tax_division:string product_grouping_id:integer`
+`
+rails g scaffold product code:string name_long:string name_short:string name_kana:string model_number:string unit_sales_price:decimal purchase_price:decimal sales_unit_price:decimal tax_division:string product_grouping_id:integer
+`
 + 顧客別販売単価
 `rails g scaffold sales_unit_price_by_customer product_id:integer customer_id:integer sales_unit_price:decimal`
 
@@ -123,6 +125,25 @@ rails g scaffold connection_category_class code:string name:string
 ### 販売システムのDB設計
 
 #### 受注業務のDB設計
++ 商品マスタに在庫区分を追加する。
+
+`rails g migration AddInventoryDvivisionToProducts inventory_control_division:string inventory_reservation_division`
+
+`rake db:migrate`
+
+`rake db:test:prepare`
+
++ 受注データを作成する。
+
+`rails g scaffold order order_number:integer order_date:date department_id:integer customer_id:integer employee_id:integer desired_delivery_time:date customer_order_number:string warehouse_code:string contract_amount_sum:decimal consumption_tax_amount:decimal notes:text order_details_id:integer`
+
++ 受注データ明細を作成する。
+
+`rails g model order_details order_line_number:integer product_id:integer product_name:string product_sales_unit_price:decimal order_amount:decimal consumption_tax_rate:decimal reserve_amount:decimal shipping_instructions_amount:decimal shipped_amount:decimal finish_flag:integer discount:decimal due_date:date`
+
+`rake db:migrate`
+
+`rake db:test:prepare`
 
 #### 出荷/売上業務のDB設計
 

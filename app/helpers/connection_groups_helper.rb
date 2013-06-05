@@ -1,0 +1,2 @@
+module ConnectionGroupsHelper
+end

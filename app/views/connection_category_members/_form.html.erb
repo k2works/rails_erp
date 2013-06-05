@@ -1,0 +1,25 @@
+<%= form_for(@connection_category_member) do |f| %>
+  <% if @connection_category_member.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@connection_category_member.errors.count, "error") %> prohibited this connection_category_member from being saved:</h2>
+
+      <ul>
+      <% @connection_category_member.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :connection_id %><br />
+    <%= f.collection_select :connection_id, Connection.all, :id, :name, { include_blank: true } %>
+  </div>
+  <div class="field">
+    <%= f.label :connection_category_id %><br />
+    <%= f.collection_select :connection_category_id, ConnectionCategory.all, :id, :name, { include_blank: true } %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

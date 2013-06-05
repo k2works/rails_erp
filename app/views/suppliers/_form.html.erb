@@ -1,0 +1,89 @@
+<%= form_for(@supplier) do |f| %>
+  <% if @supplier.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@supplier.errors.count, "error") %> prohibited this supplier from being saved:</h2>
+
+      <ul>
+      <% @supplier.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :code %><br />
+    <%= f.text_field :code %>
+  </div>
+  <div class="field">
+    <%= f.label :branch_number %><br />
+    <%= f.number_field :branch_number %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :name_kana %><br />
+    <%= f.text_field :name_kana %>
+  </div>
+  <div class="field">
+    <%= f.label :person_responsible_name %><br />
+    <%= f.text_field :person_responsible_name %>
+  </div>
+  <div class="field">
+    <%= f.label :department_name %><br />
+    <%= f.text_field :department_name %>
+  </div>
+  <div class="field">
+    <%= f.label :zip %><br />
+    <%= f.text_field :zip %>
+  </div>
+  <div class="field">
+    <%= f.label :prefectures %><br />
+    <%= f.text_field :prefectures %>
+  </div>
+  <div class="field">
+    <%= f.label :address_1 %><br />
+    <%= f.text_field :address_1 %>
+  </div>
+  <div class="field">
+    <%= f.label :address_2 %><br />
+    <%= f.text_field :address_2 %>
+  </div>
+  <div class="field">
+    <%= f.label :phone_number %><br />
+    <%= f.text_field :phone_number %>
+  </div>
+  <div class="field">
+    <%= f.label :fax_number %><br />
+    <%= f.text_field :fax_number %>
+  </div>
+  <div class="field">
+    <%= f.label :mail %><br />
+    <%= f.text_field :mail %>
+  </div>
+  <div class="field">
+    <%= f.label :closing_day %><br />
+    <%= f.text_field :closing_day %>
+  </div>
+  <div class="field">
+    <%= f.label :payment_month %><br />
+    <%= f.text_field :payment_month %>
+  </div>
+  <div class="field">
+    <%= f.label :payment_day %><br />
+    <%= f.text_field :payment_day %>
+  </div>
+  <div class="field">
+    <%= f.label :payment_division %><br />
+    <%= f.text_field :payment_division %>
+  </div>
+  <div class="field">
+    <%= f.label :connection_id %><br />
+    <%= f.collection_select 'connection_id', Connection.all, :id, :name, { include_blank: true} %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

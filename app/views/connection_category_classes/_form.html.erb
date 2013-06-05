@@ -1,0 +1,25 @@
+<%= form_for(@connection_category_class) do |f| %>
+  <% if @connection_category_class.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@connection_category_class.errors.count, "error") %> prohibited this connection_category_class from being saved:</h2>
+
+      <ul>
+      <% @connection_category_class.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :code %><br />
+    <%= f.text_field :code %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

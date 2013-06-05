@@ -1,0 +1,65 @@
+<%= form_for(@order) do |f| %>
+  <% if @order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+      <ul>
+      <% @order.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :order_number %><br />
+    <%= f.number_field :order_number %>
+  </div>
+  <div class="field">
+    <%= f.label :order_date %><br />
+    <%= f.date_select :order_date %>
+  </div>
+  <div class="field">
+    <%= f.label :department_id %><br />
+    <%= f.number_field :department_id %>
+  </div>
+  <div class="field">
+    <%= f.label :customer_id %><br />
+    <%= f.number_field :customer_id %>
+  </div>
+  <div class="field">
+    <%= f.label :employee_id %><br />
+    <%= f.number_field :employee_id %>
+  </div>
+  <div class="field">
+    <%= f.label :desired_delivery_time %><br />
+    <%= f.date_select :desired_delivery_time %>
+  </div>
+  <div class="field">
+    <%= f.label :customer_order_number %><br />
+    <%= f.text_field :customer_order_number %>
+  </div>
+  <div class="field">
+    <%= f.label :warehouse_code %><br />
+    <%= f.text_field :warehouse_code %>
+  </div>
+  <div class="field">
+    <%= f.label :contract_amount_sum %><br />
+    <%= f.text_field :contract_amount_sum %>
+  </div>
+  <div class="field">
+    <%= f.label :consumption_tax_amount %><br />
+    <%= f.text_field :consumption_tax_amount %>
+  </div>
+  <div class="field">
+    <%= f.label :notes %><br />
+    <%= f.text_area :notes %>
+  </div>
+  <div class="field">
+    <%= f.label :order_details_id %><br />
+    <%= f.number_field :order_details_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

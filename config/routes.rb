@@ -1,4 +1,7 @@
 RailsErp::Application.routes.draw do
+  resources :orders
+
+
   resources :connection_category_classes
 
 

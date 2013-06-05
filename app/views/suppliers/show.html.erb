@@ -1,0 +1,95 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Code:</b>
+  <%= @supplier.code %>
+</p>
+
+<p>
+  <b>Branch number:</b>
+  <%= @supplier.branch_number %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @supplier.name %>
+</p>
+
+<p>
+  <b>Name kana:</b>
+  <%= @supplier.name_kana %>
+</p>
+
+<p>
+  <b>Person responsible name:</b>
+  <%= @supplier.person_responsible_name %>
+</p>
+
+<p>
+  <b>Department name:</b>
+  <%= @supplier.department_name %>
+</p>
+
+<p>
+  <b>Zip:</b>
+  <%= @supplier.zip %>
+</p>
+
+<p>
+  <b>Prefectures:</b>
+  <%= @supplier.prefectures %>
+</p>
+
+<p>
+  <b>Address 1:</b>
+  <%= @supplier.address_1 %>
+</p>
+
+<p>
+  <b>Address 2:</b>
+  <%= @supplier.address_2 %>
+</p>
+
+<p>
+  <b>Phone number:</b>
+  <%= @supplier.phone_number %>
+</p>
+
+<p>
+  <b>Fax number:</b>
+  <%= @supplier.fax_number %>
+</p>
+
+<p>
+  <b>Mail:</b>
+  <%= @supplier.mail %>
+</p>
+
+<p>
+  <b>Closing day:</b>
+  <%= @supplier.closing_day %>
+</p>
+
+<p>
+  <b>Payment month:</b>
+  <%= @supplier.payment_month %>
+</p>
+
+<p>
+  <b>Payment day:</b>
+  <%= @supplier.payment_day %>
+</p>
+
+<p>
+  <b>Payment division:</b>
+  <%= @supplier.payment_division %>
+</p>
+
+<p>
+  <b>Connection:</b>
+  <%= @supplier.connection.name %>
+</p>
+
+
+<%= link_to 'Edit', edit_supplier_path(@supplier) %> |
+<%= link_to 'Back', suppliers_path %>

@@ -1,0 +1,74 @@
+<%= form_for(@connection) do |f| %>
+  <% if @connection.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@connection.errors.count, "error") %> prohibited this connection from being saved:</h2>
+
+      <ul>
+      <% @connection.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :code %><br />
+    <%= f.text_field :code %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :name_kana %><br />
+    <%= f.text_field :name_kana %>
+  </div>
+  <div class="field">
+    <%= f.label :supplier_division %><br />
+    <%= f.text_field :supplier_division %>
+  </div>
+  <div class="field">
+    <%= f.label :customer_division %><br />
+    <%= f.text_field :customer_division %>
+  </div>  
+  <div class="field">
+    <%= f.label :zip %><br />
+    <%= f.text_field :zip %>
+  </div>
+  <div class="field">
+    <%= f.label :prefectures %><br />
+    <%= f.text_field :prefectures %>
+  </div>
+  <div class="field">
+    <%= f.label :address_1 %><br />
+    <%= f.text_field :address_1 %>
+  </div>
+  <div class="field">
+    <%= f.label :address_2 %><br />
+    <%= f.text_field :address_2 %>
+  </div>
+  <div class="field">
+    <%= f.label :ban_division %><br />
+    <%= f.text_field :ban_division %>
+  </div>
+  <div class="field">
+    <%= f.label :miscellaneous_division %><br />
+    <%= f.text_field :miscellaneous_division %>
+  </div>
+  <div class="field">
+    <%= f.label :credit_limit %><br />
+    <%= f.text_field :credit_limit %>
+  </div>
+  <div class="field">
+    <%= f.label :credit_limit_increas_frame %><br />
+    <%= f.text_field :credit_limit_increas_frame %>
+  </div>
+  <div class="field">
+    <%= f.label :connection_group_id %><br />
+    <%= f.number_field :connection_group_id %><br />
+    <%= f.collection_select 'connection_group_id',ConnectionGroup.find(:all),:id, :name, { :include_blank => true} %>                
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
