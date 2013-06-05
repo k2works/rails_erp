@@ -39,6 +39,7 @@
  + 売価還元法
 
 + ホーム画面
+
 `rails g controller home index`
 
 + 社員マスタ
@@ -146,6 +147,10 @@ rails g scaffold connection_category_class code:string name:string
 `rake db:test:prepare`
 
 + リレーションの設定
+
++ 明細テーブルも編集できるようにする
+[参照](http://www.tamurasouko.com/?p=1595)
+
 #### 出荷/売上業務のDB設計
 
 #### 請求業務のDB設計
