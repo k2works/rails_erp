@@ -21,15 +21,15 @@
   </div>
   <div class="field">
     <%= f.label :department_id %><br />
-    <%= f.number_field :department_id %>
+    <%= f.collection_select :department_id, Department.all,:id,:name, {include_blank: true } %>
   </div>
   <div class="field">
     <%= f.label :customer_id %><br />
-    <%= f.number_field :customer_id %>
+    <%= f.collection_select :customer_id, Customer.all,:id,:name,{include_blank: true} %>
   </div>
   <div class="field">
     <%= f.label :employee_id %><br />
-    <%= f.number_field :employee_id %>
+    <%= f.collection_select :employee_id, Employee.all,:id,:name,{include_blank: true } %>
   </div>
   <div class="field">
     <%= f.label :desired_delivery_time %><br />
@@ -55,7 +55,43 @@
     <%= f.label :notes %><br />
     <%= f.text_area :notes %>
   </div>
+
+<table>
+  <tr>
+    <th>OrderLineNumber</th>
+    <th>ProductId</th>
+    <th>ProductName</th>
+    <th>ProductSalesUnitPrice</th>
+    <th>OrderAmount</th>
+    <th>ConsumptionTaxRate</th>
+    <th>ReserveAmount</th>
+    <th>ShippingInstructionsAmount</th>
+    <th>ShippedAmount</th>
+    <th>FinishFlg</th>
+    <th>Discount</th>
+    <th>DueDate</th>        
+  </tr>
+  <% @order.order_detail.each do |order_detail| %>
+    <%= f.fields_for :order_detail, order_detail do |fd| %>
+      <tr>        
+        <td><%= fd.text_field :order_line_number %></td>
+        <td><%= fd.collection_select :product_id,Product.all,:id,:code,{include_blank: true} %></td>
+        <td><%= fd.collection_select :product_name,Product.all,:id,:name_short,{include_blank:true} %></td>
+        <td><%= fd.text_field :product_sales_unit_price %></td>
+        <td><%= fd.text_field :order_amount %></td>
+        <td><%= fd.text_field :consumption_tax_rate %></td>
+        <td><%= fd.text_field :reserve_amount %></td>
+        <td><%= fd.text_field :shipping_instructions_amount %></td>
+        <td><%= fd.text_field :shipped_amount %></td>
+        <td><%= fd.text_field :finish_flag %></td>
+        <td><%= fd.text_field :discount %></td>
+        <td><%= fd.text_field :due_date %></td> 
+      </tr>
+    <% end %>      
+<% end %>
+</table>
+
   <div class="actions">
     <%= f.submit %>
-  </div>
+  </div>  
 <% end %>

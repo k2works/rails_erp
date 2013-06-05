@@ -12,5 +12,7 @@ class Order < ActiveRecord::Base
     :consumption_tax_amount,
     :notes
     )
-  has_many :order_details
+  has_many :order_detail
+  accepts_nested_attributes_for :order_detail
+  attr_accessible :order_detail_attributes
 end

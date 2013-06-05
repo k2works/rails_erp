@@ -139,7 +139,7 @@ rails g scaffold connection_category_class code:string name:string
 
 + 受注データ明細を作成する。
 
-`rails g model order_details order_line_number:integer product_id:integer product_name:string product_sales_unit_price:decimal order_amount:decimal consumption_tax_rate:decimal reserve_amount:decimal shipping_instructions_amount:decimal shipped_amount:decimal finish_flag:integer discount:decimal due_date:date order_id:integer`
+`rails g model order_detail order_line_number:integer product_id:integer product_name:string product_sales_unit_price:decimal order_amount:decimal consumption_tax_rate:decimal reserve_amount:decimal shipping_instructions_amount:decimal shipped_amount:decimal finish_flag:integer discount:decimal due_date:date order_id:integer`
 
 `rake db:migrate`
 

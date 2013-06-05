@@ -2,7 +2,7 @@ class OrdersController < ApplicationController
   # GET /orders
   # GET /orders.json
   def index
-    @orders = Order.all
+    @orders = Order.find(:all)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -25,6 +25,11 @@ class OrdersController < ApplicationController
   # GET /orders/new.json
   def new
     @order = Order.new
+
+    3.times do 
+      order_detail = OrderDetail.new
+      @order.order_detail << order_detail      
+    end
 
     respond_to do |format|
       format.html # new.html.erb

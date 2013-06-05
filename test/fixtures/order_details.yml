@@ -1,8 +1,9 @@
-order_details:
+<% 1.upto(3) do |n| %>
+order_details<%= n %>:
  order: order1
- order_line_number: 1
+ order_line_number: <%= n %>
  product_id: 1
- product_name: "製品"
+ product_name: "製品<%= n %>"
  product_sales_unit_price: 1000
  order_amount: 10
  consumption_tax_rate: 0.05
@@ -14,3 +15,4 @@ order_details:
  due_date: 2013-06-12
  created_at: 2013-06-01
  updated_at: 2013-06-01
+<% end %>

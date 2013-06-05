@@ -1,4 +1,4 @@
-class OrderDetails < ActiveRecord::Base
+class OrderDetail < ActiveRecord::Base
   attr_accessible(
     :order_id,
     :order_line_number,

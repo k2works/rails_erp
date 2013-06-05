@@ -1,5 +1,4 @@
 <h1>Listing orders</h1>
-
 <table>
   <tr>
     <th>Order number</th>
@@ -13,12 +12,23 @@
     <th>Contract amount sum</th>
     <th>Consumption tax amount</th>
     <th>Notes</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>OrderLineNumber</th>
+    <th>ProductId</th>
+    <th>ProductName</th>
+    <th>ProductSalesUnitPrice</th>
+    <th>OrderAmount</th>
+    <th>ConsumptionTaxRate</th>
+    <th>ReserveAmount</th>
+    <th>ShippingInstructionsAmount</th>
+    <th>ShippedAmount</th>
+    <th>FinishFlg</th>
+    <th>Discount</th>
+    <th>DueDate</th>        
   </tr>
 
-<% @orders.each do |order| %>
+  <% @orders.each do |order| %>    
+  <% @details = order.order_detail %>
+  <% @details.each do |order_detail| %>
   <tr>
     <td><%= order.order_number %></td>
     <td><%= order.order_date %></td>
@@ -31,11 +41,24 @@
     <td><%= order.contract_amount_sum %></td>
     <td><%= order.consumption_tax_amount %></td>
     <td><%= order.notes %></td>
+    <td><%= order_detail.order_line_number %></td>
+    <td><%= order_detail.product_id %></td>
+    <td><%= order_detail.product_name %></td>
+    <td><%= order_detail.product_sales_unit_price %></td>
+    <td><%= order_detail.order_amount %></td>
+    <td><%= order_detail.consumption_tax_rate %></td>
+    <td><%= order_detail.reserve_amount %></td>
+    <td><%= order_detail.shipping_instructions_amount %></td>
+    <td><%= order_detail.shipped_amount %></td>
+    <td><%= order_detail.finish_flag %></td>
+    <td><%= order_detail.discount %></td>
+    <td><%= order_detail.due_date %></td>    
     <td><%= link_to 'Show', order %></td>
     <td><%= link_to 'Edit', edit_order_path(order) %></td>
     <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+  </tr>    
+  <% end %>
+  <% end %>
 </table>
 
 <br />
