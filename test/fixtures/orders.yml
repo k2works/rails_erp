@@ -1,0 +1,12 @@
+order1:
+ order_number: 1
+ order_date: 2013-06-05
+ department_id: 1
+ customer_id: 1
+ employee_id: 1
+ desired_delivery_time: 2013-06-12
+ customer_order_number: CS
+ warehouse_code: "00001"
+ contract_amount_sum: 0
+ consumption_tax_amount: 0
+ notes: "備考なし"

@@ -13,7 +13,6 @@
     <th>Contract amount sum</th>
     <th>Consumption tax amount</th>
     <th>Notes</th>
-    <th>Order details</th>
     <th></th>
     <th></th>
     <th></th>
@@ -32,7 +31,6 @@
     <td><%= order.contract_amount_sum %></td>
     <td><%= order.consumption_tax_amount %></td>
     <td><%= order.notes %></td>
-    <td><%= order.order_details_id %></td>
     <td><%= link_to 'Show', order %></td>
     <td><%= link_to 'Edit', edit_order_path(order) %></td>
     <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
